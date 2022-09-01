@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+create a new react app for GYM exercies that include :
+pages
+component
+api
+get and post request
+detailes
+logo
+image
+mui materyals
+dynamic route
+box
+typography
+and so on
+
+\*for install all dependency in package.json in terminal write:
+npm install --legacy-peer-deps
