@@ -85,3 +85,4 @@ and so on
 
 \*for install all dependency in package.json in terminal write:
 npm install --legacy-peer-deps
+npm install @mui/material @emotion/react @emotion/styled
