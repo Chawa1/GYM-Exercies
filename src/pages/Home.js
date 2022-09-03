@@ -12,9 +12,6 @@ const Home = () => {
   <HeroBanner/>
  <Exercise/>
  <SearchExercise/>
-  {/* <HeroBanner />
-  <SearchExercises />
-  <Exercises /> */}
  </Box>
   );
 }
