@@ -1,8 +1,27 @@
 import React, { useEffect, useState} from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
-import { borderRadius } from '@mui/system';
+
+import { fetchData ,exerciseOptions } from '../utils/fetchData';
 
 const SearchExercise = () => {
+  const {search, setSearch} = useState(''); /* to set action to button and input data */
+  const {exercises, setExercise} = useState([]);
+
+  const handleSearch = async () => { /* async for pull some of data */
+if(search){
+  const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+
+  const searchedExercises = exercisesData.filter(
+    (exercise) => exercise.name.toLowerCase().includes(search)
+   // , exercise.target.toLowerCase().includes(search),
+   // exercise.equipment.toLowerCase().includes(search),
+   // exercise.bodyPart.toLowerCase().includes(search),
+  );
+
+  setSearch('');
+}
+  }
+  
   return (
 <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
 <Typography fontWeight={700} sx={{
@@ -25,7 +44,7 @@ sx={{
 }}
 height="76px"
 value=""
-onChange={(e) => {}}
+onChange={(e) => setSearch(e.target.value.toLowerCase())} /* boi gar ba smole yan kapital search ii krd haman sht bet */
 placeholder="Search Exercises"
 type="text"
 />
@@ -38,8 +57,10 @@ sx={{
   width: { lg: '175px', xs: '80px'},
   fontSize: { lg: '20px' , xs: '14px'},
   height: '56px',
-  position: "absolute"
+  position: "absolute",
+  right: '0'   /* chonka absolute w box man bakarhenawa boi rek beta center */
 }}
+onClick={handleSearch}
 >
 Search
 </Button>
